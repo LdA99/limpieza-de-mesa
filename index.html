@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Limpieza de Mesa</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1f6b4a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pool">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap">
 <style>
 /* Layout: una sola columna pensada para el celu al borde de la mesa.
@@ -993,6 +1000,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   renderClean();
   renderMatch();
   if (startTs) lockScreen();
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
   load();
 })();
 </script>
